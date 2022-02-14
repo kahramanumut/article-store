@@ -34,8 +34,6 @@ namespace Article.WebApi
             else
                 connectionString = Configuration.GetConnectionString("DockerDefault");
             
-            Console.WriteLine(connectionString);
-
             services.AddDbContext<ArticleDbContext>(options =>
                 options.UseNpgsql(connectionString, b => b.MigrationsAssembly("Article.Infrastructure")));
 
