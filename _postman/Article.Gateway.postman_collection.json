@@ -1,0 +1,779 @@
+{
+	"info": {
+		"_postman_id": "86b9f34d-1cf8-4052-87bf-a0768f60d03f",
+		"name": "Article.WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "article-api/Article",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/article-api/Article/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/article-api/Article/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"article-api",
+										"Article",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/article-api/Article/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"article-api",
+												"Article",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/article-api/Article/:id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"aliquip dolore ad\",\n    \"author\": \"aliqua\",\n    \"articleContent\": \"esse et est\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/article-api/Article/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"article-api",
+										"Article",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"aliquip dolore ad\",\n    \"author\": \"aliqua\",\n    \"articleContent\": \"esse et est\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/article-api/Article/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"article-api",
+												"Article",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"data\": {\n  \"id\": \"fb69d89e-dd67-4c02-979e-e148cc318478\",\n  \"title\": \"deserunt ipsum\",\n  \"author\": \"reprehenderit laboris lab\",\n  \"articleContent\": \"ulla\",\n  \"starCount\": 89438112,\n  \"publishDate\": \"2021-04-23T04:39:55.050Z\"\n },\n \"isSuccess\": true,\n \"message\": \"ut reprehenderit\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/article-api/Article/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/article-api/Article/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"article-api",
+										"Article",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/article-api/Article/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"article-api",
+												"Article",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"isSuccess\": true,\n \"message\": \"adipisicing incididunt dolore\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/article-api/Article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/article-api/Article",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article-api",
+								"Article"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/article-api/Article",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"article-api",
+										"Article"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": \"1d5bae60-2d38-fb41-b48d-3f78fa276ef9\",\n  \"title\": \"anim veniam ex fugiat ut\",\n  \"author\": \"magna ut\",\n  \"articleContent\": \"incididunt aute dolor aliquip\",\n  \"publishDate\": \"2008-11-28T10:34:41.761Z\",\n  \"starCount\": -61292867\n },\n {\n  \"id\": \"urn:uuid:1ffe6204-7252-5be4-3db4-753471b83053\",\n  \"title\": \"non adipisicing esse sit\",\n  \"author\": \"qui Ut cillum sit\",\n  \"articleContent\": \"sunt adipisicing\",\n  \"publishDate\": \"1948-04-08T18:00:13.663Z\",\n  \"starCount\": -93216540\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "/article-api/Article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"aliquip dolore ad\",\n    \"author\": \"aliqua\",\n    \"articleContent\": \"esse et est\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/article-api/Article",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article-api",
+								"Article"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"aliquip dolore ad\",\n    \"author\": \"aliqua\",\n    \"articleContent\": \"esse et est\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/article-api/Article",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"article-api",
+										"Article"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": {\n  \"id\": \"fb69d89e-dd67-4c02-979e-e148cc318478\",\n  \"title\": \"deserunt ipsum\",\n  \"author\": \"reprehenderit laboris lab\",\n  \"articleContent\": \"ulla\",\n  \"starCount\": 89438112,\n  \"publishDate\": \"2021-04-23T04:39:55.050Z\"\n },\n \"isSuccess\": true,\n \"message\": \"ut reprehenderit\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/article-api/Article/increment-star-count/:id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/article-api/Article/increment-star-count/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article-api",
+								"Article",
+								"increment-star-count",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/article-api/Article/increment-star-count/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"article-api",
+										"Article",
+										"increment-star-count",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:5517f47e-a727-3260-d7eb-83c3f56d9008",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"isSuccess\": true,\n \"message\": \"adipisicing incididunt dolore\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "review-api/Review",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/review-api/Review/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/review-api/Review/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"review-api",
+										"Review",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:4aa2b36a-c903-1a62-e866-2e619e08ef3d",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/review-api/Review/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"review-api",
+												"Review",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:4aa2b36a-c903-1a62-e866-2e619e08ef3d",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"urn:uuid:f970862b-b282-f687-0519-64431b391f23\",\n \"articleId\": \"urn:uuid:342f950c-9d65-a464-9515-f4fe557c195d\",\n \"reviewer\": \"c\",\n \"reviewContent\": \"non elit id\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/review-api/Review/:id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reviewId\": \"9c4ed2fa-a00b-917e-5eca-c099dd78ab06\",\n    \"reviewer\": \"sunt aute eiusmod\",\n    \"reviewContent\": \"nisi reprehenderit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/review-api/Review/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"review-api",
+										"Review",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:4aa2b36a-c903-1a62-e866-2e619e08ef3d",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"reviewId\": \"9c4ed2fa-a00b-917e-5eca-c099dd78ab06\",\n    \"reviewer\": \"sunt aute eiusmod\",\n    \"reviewContent\": \"nisi reprehenderit\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/review-api/Review/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"review-api",
+												"Review",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:4aa2b36a-c903-1a62-e866-2e619e08ef3d",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"data\": {\n  \"id\": \"bc442072-0e99-d3a5-5723-10ed46db3996\",\n  \"articleId\": \"4946d078-581a-6972-9214-03675c6c1547\",\n  \"reviewer\": \"eiusmod Duis Excepteur ullamco Lorem\",\n  \"reviewContent\": \"sed amet fugiat ut\"\n },\n \"isSuccess\": true,\n \"message\": \"labore et\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/review-api/Review/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/review-api/Review/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"review-api",
+										"Review",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:4aa2b36a-c903-1a62-e866-2e619e08ef3d",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/review-api/Review/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"review-api",
+												"Review",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:4aa2b36a-c903-1a62-e866-2e619e08ef3d",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"isSuccess\": true,\n \"message\": \"exercitation esse aliqua\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/review-api/Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/review-api/Review",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"review-api",
+								"Review"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/review-api/Review",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"review-api",
+										"Review"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": \"urn:uuid:5f162d66-df53-0510-5544-dbd694d4068f\",\n  \"articleId\": \"urn:uuid:9c1da638-0391-b665-0feb-b7b78aec5bf7\",\n  \"reviewer\": \"non et laboris\",\n  \"reviewContent\": \"laborum reprehenderit\"\n },\n {\n  \"id\": \"ff46ee8c-3ab4-b074-d247-f929e7eddb4a\",\n  \"articleId\": \"urn:uuid:546972e9-c734-2379-ad49-56bc9ba0a686\",\n  \"reviewer\": \"in el\",\n  \"reviewContent\": \"ea proident d\"\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "/review-api/Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"articleId\": \"409c2f40-2bad-c023-c1a4-263b53c7d4b2\",\n    \"reviewer\": \"aliquip\",\n    \"reviewContent\": \"tempor laboris\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/review-api/Review",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"review-api",
+								"Review"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"articleId\": \"409c2f40-2bad-c023-c1a4-263b53c7d4b2\",\n    \"reviewer\": \"aliquip\",\n    \"reviewContent\": \"tempor laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/review-api/Review",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"review-api",
+										"Review"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;odata.metadata=minimal;odata.streaming=true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": {\n  \"id\": \"bc442072-0e99-d3a5-5723-10ed46db3996\",\n  \"articleId\": \"4946d078-581a-6972-9214-03675c6c1547\",\n  \"reviewer\": \"eiusmod Duis Excepteur ullamco Lorem\",\n  \"reviewContent\": \"sed amet fugiat ut\"\n },\n \"isSuccess\": true,\n \"message\": \"labore et\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5003",
+			"type": "string"
+		}
+	]
+}

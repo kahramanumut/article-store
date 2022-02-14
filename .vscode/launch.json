@@ -1,0 +1,67 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Article Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskArticleApiBuild",
+            "program": "${workspaceFolder}/src/article-api/Article.WebApi/bin/Debug/net5.0/Article.WebApi.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/article-api/Article.WebApi",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://*:5001"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Review Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskReviewApiBuild",
+            "program": "${workspaceFolder}/src/review-api/Review.WebApi/bin/Debug/net5.0/Review.WebApi.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/review-api/Review.WebApi",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://*:5002"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Gateway Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskGatewayApiBuild",
+            "program": "${workspaceFolder}/src/gateway-api/bin/Debug/net5.0/Gateway.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/gateway-api",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://*:5003"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },       
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All of API",
+            "configurations": ["Article Api", "Review Api", "Gateway Api" ]
+        }
+    ],
+}

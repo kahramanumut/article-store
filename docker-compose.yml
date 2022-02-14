@@ -1,0 +1,43 @@
+#docker build -t article-api -f src/article-api/Article.WebApi/Dockerfile .
+
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres:alpine
+    container_name: articlecasedb
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=articlecasepass
+
+  article-api:
+    build: 
+      context: .
+      dockerfile: src/article-api/Article.WebApi/Dockerfile
+    container_name: article-container
+    ports:
+      - "5001:5001"
+    depends_on:
+      - postgres
+
+  review-api:
+    build: 
+      context: .
+      dockerfile: src/review-api/Review.WebApi/Dockerfile
+    container_name: review-container
+    ports:
+      - "5002:5002"
+    depends_on:
+      - postgres
+
+  gateway-api:
+    build: src/gateway-api/.
+    container_name: gateway-container
+    ports:
+      - "5003:5003"       
+  
+networks:
+  default:
+    name: my-pre-existing-network

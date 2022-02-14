@@ -1,0 +1,59 @@
+{
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:5000"
+    },
+    "SwaggerEndPoints": [
+      {
+        "Key": "article",
+        "Config": [
+          {
+            "Name": "Article API",
+            "Version": "v1",
+            "Url": "http://localhost:5001/swagger/v1/swagger.json"
+          }
+        ]
+      },
+      {
+        "Key": "review",
+        "Config": [
+          {
+            "Name": "Review API",
+            "Version": "v1",
+            "Url": "http://localhost:5002/swagger/v1/swagger.json"
+          }
+        ]
+      }
+    ],
+    "Routes": [
+      {
+        "UpstreamPathTemplate": "/article-api/{everything}",
+        "UpstreamHttpMethod": [
+          "Get","Post","Put","Delete"
+        ],
+        "DownstreamPathTemplate": "/api/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5001
+          }
+        ],
+        "SwaggerKey": "article"
+      },
+      {
+        "UpstreamPathTemplate": "/review-api/{everything}",
+        "UpstreamHttpMethod": [
+            "Get","Post","Put","Delete"
+        ],
+        "DownstreamPathTemplate": "/api/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5002
+          }
+        ],
+        "SwaggerKey": "review"
+      }
+    ]
+  } 
