@@ -1,4 +1,4 @@
-using Domain.Article;
+using Article.Domain;
 using Microsoft.EntityFrameworkCore;
 
     public class ArticleDbContext : DbContext

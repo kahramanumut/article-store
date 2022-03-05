@@ -1,12 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Article.Domain\Article.Domain.csproj" />
-    <ProjectReference Include="..\..\shared\Shared.Infrastructure\Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\Article.Application\Article.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EfCore\Repositories\" />
   </ItemGroup>
 
 </Project>

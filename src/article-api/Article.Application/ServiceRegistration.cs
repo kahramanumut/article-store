@@ -5,24 +5,28 @@ using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-public static class ServiceRegistration
+namespace Article.Application
 {
-    public static IServiceCollection Register(this IServiceCollection services, IConfiguration configuration)
+    public static class ServiceRegistration
     {
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-        services.AddMediatR(Assembly.GetExecutingAssembly());
-        services.AddScoped<ICommandSender, CommandSender>();
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-
-        services.AddHttpClient("ReviewClient", configureClient: client =>
+        public static IServiceCollection Register(this IServiceCollection services, IConfiguration configuration)
         {
-            if(String.IsNullOrEmpty(Environment.GetEnvironmentVariable("ISDOCKER")))
-                client.BaseAddress = new Uri(configuration.GetSection("GatewayUrl:Local").Value);
-            else
-                client.BaseAddress = new Uri(configuration.GetSection("GatewayUrl:Docker").Value);
-        });
-        services.AddTransient<ReviewService>();
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped<ICommandSender, CommandSender>();
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
-        return services;
+            services.AddHttpClient("ReviewClient", configureClient: client =>
+            {
+                if(String.IsNullOrEmpty(Environment.GetEnvironmentVariable("ISDOCKER")))
+                    client.BaseAddress = new Uri(configuration.GetSection("GatewayUrl:Local").Value);
+                else
+                    client.BaseAddress = new Uri(configuration.GetSection("GatewayUrl:Docker").Value);
+            });
+            services.AddTransient<ReviewService>();
+
+            return services;
+        }
     }
+
 }

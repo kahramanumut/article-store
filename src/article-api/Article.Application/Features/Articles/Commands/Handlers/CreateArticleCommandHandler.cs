@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.Article;
+using Article.Domain;
 using MediatR;
 
 public class CreateArticleCommandHandler: ICommandHandler<CreateArticleCommand, ArticleDto>
@@ -14,7 +14,7 @@ public class CreateArticleCommandHandler: ICommandHandler<CreateArticleCommand, 
 
     public async Task<ArticleDto> Handle(CreateArticleCommand command, CancellationToken cancellationToken)
     {
-        Article newArticle = new Article();
+        Article.Domain.Article newArticle = new Article();
         newArticle.Create(command.Title, command.Author, command.ArticleContent);
 
         await _dbContext.AddAsync(newArticle);

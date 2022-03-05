@@ -13,25 +13,25 @@ namespace Article.WebApi.Controllers
     public class ArticleController : ControllerBase
     {
         private readonly ICommandSender _commandSender;
-        private readonly ArticleDbContext _dbContext;
-        public ArticleController(ICommandSender mediator, ArticleDbContext dbContext) 
+        private readonly IQuerySender _querySender;
+        public ArticleController(ICommandSender mediator, IQuerySender querySender) 
         {
             _commandSender = mediator;
-            _dbContext = dbContext;
+            _querySender = querySender;
         }
 
         [HttpGet]
         [EnableQuery]
         public IEnumerable<Domain.Article.Article> Get()
         {
-            return _dbContext.Articles;
+            return _querySender.SendAsync();
         }
 
         [HttpGet("{id}")]
         [EnableQuery]
         public IActionResult Get(Guid id)
         {
-            return Ok(_dbContext.Articles.Where(x => x.Id == id));
+            return Ok(_querySender.Articles.Where(x => x.Id == id));
         }
         
         [HttpPost]

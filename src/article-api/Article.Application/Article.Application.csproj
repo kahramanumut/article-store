@@ -5,12 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\Repositories\IArticleRepositoryAsync.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Interfaces\IGenericRepositoryAsync.cs" />
+    <None Include="Interfaces\Repositories\IArticleRepositoryAsync.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Article.Infrastructure\Article.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\shared\Shared.Infrastructure\Shared.Application.csproj" />
+    <ProjectReference Include="..\Article.Domain\Article.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Articles\Queries\Handlers\" />
   </ItemGroup>
 
 </Project>
