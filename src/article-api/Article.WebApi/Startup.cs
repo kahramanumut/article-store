@@ -13,6 +13,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
+using Article.Application;
+using Article.Infrastructure.EfCore;
+using Article.Application.Interfaces;
+using Article.Application.Interfaces.Repositories;
+using Article.Infrastructure.EfCore.Repositories;
+using System.Reflection;
 
 namespace Article.WebApi
 {
@@ -38,6 +44,9 @@ namespace Article.WebApi
                 options.UseNpgsql(connectionString, b => b.MigrationsAssembly("Article.Infrastructure")));
 
             services.Register(Configuration);
+            services.AddTransient( typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>) );
+            services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
+            services.AddTransient<IArticleRepositoryAsync, ArticleRepositoryAsync>();
 
             services.AddControllers().AddOData(opt => opt.Count().Filter().Expand().Select().OrderBy().SetMaxTop(null));
 

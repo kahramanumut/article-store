@@ -1,0 +1,19 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
+namespace Article.WebApi.Controllers
+{
+    /// <summary>
+    /// Abstract BaseApi Controller Class
+    /// </summary>
+    [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    public abstract class BaseApiController<T> : ControllerBase
+    {
+        private IRequestSender _commandSenderInstance;
+        private ILogger<T> _loggerInstance;
+        protected IRequestSender _commandSender => _commandSenderInstance ??= HttpContext.RequestServices.GetService<IRequestSender>();
+        protected ILogger<T> _logger => _loggerInstance ??= HttpContext.RequestServices.GetService<ILogger<T>>();
+    }
+}
