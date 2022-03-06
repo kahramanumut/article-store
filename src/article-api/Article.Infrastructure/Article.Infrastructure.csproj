@@ -8,8 +8,4 @@
     <ProjectReference Include="..\Article.Application\Article.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EfCore\Repositories\" />
-  </ItemGroup>
-
 </Project>

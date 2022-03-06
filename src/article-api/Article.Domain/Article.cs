@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Article
+namespace Article.Domain
 {
     public class Article : Entity
     {
@@ -26,7 +26,7 @@ namespace Domain.Article
             ArticleContent = articleContent;
         }
 
-        public void IncrementStartCount()
+        public void IncrementStarCount()
         {
             StarCount++;
         }

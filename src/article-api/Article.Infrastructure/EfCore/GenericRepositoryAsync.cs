@@ -16,8 +16,15 @@ namespace Article.Infrastructure.EfCore
         {
             _dbContext = dbContext;
         }
+        #region Query
+        public async Task<IReadOnlyList<T>> GetAllAsync()
+        {
+            return await _dbContext
+                 .Set<T>()
+                 .ToListAsync();
+        }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> GetByIdAsync(Guid id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
         }
@@ -31,31 +38,25 @@ namespace Article.Infrastructure.EfCore
                 .AsNoTracking()
                 .ToListAsync();
         }
+        #endregion
 
+        #region Command
         public async Task<T> AddAsync(T entity)
         {
             await _dbContext.Set<T>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
             return entity;
         }
 
         public async Task UpdateAsync(T entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(T entity)
         {
             _dbContext.Set<T>().Remove(entity);
-            await _dbContext.SaveChangesAsync();
-        }
+        } 
+        #endregion
 
-        public async Task<IReadOnlyList<T>> GetAllAsync()
-        {
-            return await _dbContext
-                 .Set<T>()
-                 .ToListAsync();
-        }
     }
 }

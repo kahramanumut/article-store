@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using Article.Application.HttpServices;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -12,8 +13,9 @@ namespace Article.Application
         public static IServiceCollection Register(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddScoped<ICommandSender, CommandSender>();
+            services.AddScoped<IRequestSender, RequestSender>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             services.AddHttpClient("ReviewClient", configureClient: client =>

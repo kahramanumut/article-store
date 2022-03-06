@@ -1,6 +1,6 @@
 using FluentValidation;
 
-public class CreateArticleCommand : ICommand<ArticleDto>
+public class CreateArticleCommand : IRequest<ArticleDto>
 {
     public string Title { get; set; }
     public string Author { get; set; }

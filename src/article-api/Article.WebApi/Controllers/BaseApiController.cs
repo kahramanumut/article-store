@@ -11,11 +11,9 @@ namespace Article.WebApi.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public abstract class BaseApiController<T> : ControllerBase
     {
-        private ICommandSender _commandSenderInstance;
-        private IQuerySender _querySenderInstance;
+        private IRequestSender _commandSenderInstance;
         private ILogger<T> _loggerInstance;
-        protected ICommandSender _commandSender => _commandSenderInstance ??= HttpContext.RequestServices.GetService<ICommandSender>();
-        protected IQuerySender _querySender => _querySenderInstance ??= HttpContext.RequestServices.GetService<IQuerySender>();
+        protected IRequestSender _commandSender => _commandSenderInstance ??= HttpContext.RequestServices.GetService<IRequestSender>();
         protected ILogger<T> _logger => _loggerInstance ??= HttpContext.RequestServices.GetService<ILogger<T>>();
     }
 }
