@@ -1,6 +1,6 @@
 using System;
 
-public class DeleteArticleCommand : ICommand<bool>
+public class DeleteArticleCommand : IRequest<bool>
 {
     public Guid ArticleId { get; set; }
 }

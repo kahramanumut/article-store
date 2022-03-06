@@ -1,6 +1,7 @@
-using Domain.Article;
 using Microsoft.EntityFrameworkCore;
 
+namespace Article.Infrastructure.EfCore
+{
     public class ArticleDbContext : DbContext
     {
         //Migration and DB update
@@ -17,6 +18,8 @@ using Microsoft.EntityFrameworkCore;
 
         }
 
-        public DbSet<Article> Articles { get; set; }
+        public DbSet<Domain.Article> Articles { get; set; }
 
     }
+
+}

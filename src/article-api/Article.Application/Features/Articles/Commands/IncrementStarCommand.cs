@@ -1,6 +1,6 @@
 using System;
 
-public class IncrementStarCommand : ICommand<int>
+public class IncrementStarCommand : IRequest<int>
 {
     public Guid ArticleId { get; set; }
 }
